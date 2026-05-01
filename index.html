@@ -60,89 +60,6 @@
     <a href="#book" onclick="toggleMenu()" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full">Book a Session</a>
 </div>
 
-<!-- Smart Sticky Button -->
-<div id="sticky-booker" class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-[90%] transition-all duration-300">
-    <a href="#book" class="flex items-center justify-center bg-[#48596b] text-[#efeae4] py-4 rounded-full shadow-2xl border border-white/20 tracking-[0.2em] uppercase font-bold text-sm backdrop-blur-sm active:scale-95 transition-all">Book Your Session</a>
-</div>
-
-<script>
-    const menu = document.getElementById('mobile-menu');
-    const stickyBtn = document.getElementById('sticky-booker');
-    const bookSection = document.getElementById('book');
-
-    /**
-     * CORE VISIBILITY LOGIC
-     * This handles the "Hide when menu open" and "Hide when at bottom" rules.
-     */
-    function handleVisibility() {
-        const isMenuOpen = !menu.classList.contains('hidden');
-        
-        // 1. If menu is open, delete the button from view entirely
-        if (isMenuOpen) {
-            stickyBtn.style.display = 'none';
-            return;
-        }
-
-        // 2. Check if we are at the booking section using the Observer state
-        // (Handled by the IntersectionObserver below for better accuracy)
-        stickyBtn.style.display = 'block';
-    }
-
-    /**
-     * TOGGLE MENU
-     */
-    function toggleMenu() {
-        menu.classList.toggle('hidden');
-        const isMenuOpen = !menu.classList.contains('hidden');
-        document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
-        
-        handleVisibility();
-    }
-
-    /**
-     * INTERSECTION OBSERVER
-     * Automatically hides the button as soon as the #book section is visible
-     */
-    const observerOptions = {
-        root: null,
-        threshold: 0.1 // Triggers when 10% of the booking section is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Hide when booking section is on screen
-                stickyBtn.style.opacity = '0';
-                stickyBtn.style.pointerEvents = 'none';
-                stickyBtn.style.transform = 'translate(-50%, 20px)';
-            } else {
-                // Show when away from booking section (unless menu is open)
-                if (menu.classList.contains('hidden')) {
-                    stickyBtn.style.opacity = '1';
-                    stickyBtn.style.pointerEvents = 'auto';
-                    stickyBtn.style.transform = 'translate(-50%, 0)';
-                }
-            }
-        });
-    }, observerOptions);
-
-    observer.observe(bookSection);
-
-    // Initial check on load
-    handleVisibility();
-</script>
-
-<!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-[#efeae4] flex flex-col items-center justify-center gap-8 text-xl tracking-[0.2em] uppercase font-light">
-    <button class="absolute top-10 right-10 text-[#48596b]" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-    </button>
-    <a href="#philosophy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
-    <a href="#offerings" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
-    <a href="#testimonials" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
-    <a href="#book" onclick="toggleMenu()" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full">Book a Session</a>
-</div>
-
 <!-- Hero Section -->
 <section id="home" class="pt-32 pb-20 lg:pt-40 lg:pb-32 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
     <div class="flex-1 w-full max-w-md lg:max-w-none relative fade-in order-1 lg:order-1">
@@ -166,7 +83,7 @@
     </div>
 </section>
 
-<!-- Philosophy Section (Full Restored Text) -->
+<!-- Philosophy Section -->
 <section id="philosophy" class="py-24 bg-[#a68a69]/5 relative overflow-hidden">
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
         <h2 class="text-4xl lg:text-5xl font-light text-[#48596b] mb-12 uppercase tracking-[0.2em]">
@@ -197,7 +114,7 @@
     </div>
 </section>
 
-<!-- Offerings Section (Full Restored Text) -->
+<!-- Offerings Section -->
 <section id="offerings" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
@@ -205,28 +122,24 @@
             <p class="text-[#a68a69] tracking-widest uppercase text-sm font-medium">Tailored experiences for your lifestyle</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Studio -->
             <div class="bg-[#efeae4] p-10 rounded-[2rem] border border-[#a68a69]/10 flex flex-col h-full">
                 <h3 class="text-xl font-light text-[#48596b] mb-4 uppercase tracking-widest">Studio</h3>
                 <p class="text-sm leading-relaxed text-[#48596b]/80">
                     Join me in some of Abu Dhabi's most serene and inspiring studio spaces. These community-driven sessions are designed to help you connect with like-minded practitioners while receiving professional guidance in a focused environment.
                 </p>
             </div>
-            <!-- Private -->
             <div class="bg-[#a68a69]/20 p-10 rounded-[2rem] border border-[#a68a69]/20 flex flex-col h-full">
                 <h3 class="text-xl font-light text-[#48596b] mb-4 uppercase tracking-widest">Private</h3>
                 <p class="text-sm leading-relaxed text-[#48596b]/80">
                     Experience the luxury of personalized 1-on-1 guidance tailored specifically to your body's needs and your personal goals. Whether in the sanctuary of your own home or a private setting, we focus on alignment, breath, and your unique journey.
                 </p>
             </div>
-            <!-- Outdoor -->
             <div class="bg-[#aecae8]/30 p-10 rounded-[2rem] border border-[#7a90a8]/20 flex flex-col h-full">
                 <h3 class="text-xl font-light text-[#48596b] mb-4 uppercase tracking-widest">Outdoor</h3>
                 <p class="text-sm leading-relaxed text-[#48596b]/80">
                     Connect with the elements and find your flow on the pristine, turquoise shores of Saadiyat Beach. There is no better way to practice mindfulness than with the sound of the waves and the natural energy of the ocean.
                 </p>
             </div>
-            <!-- Events -->
             <div class="bg-[#48596b] p-10 rounded-[2rem] text-[#efeae4] flex flex-col h-full">
                 <h3 class="text-xl font-light mb-4 uppercase tracking-widest">Events</h3>
                 <p class="text-sm leading-relaxed text-[#efeae4]/80">
@@ -302,30 +215,39 @@
 </footer>
 
 <!-- Smart Sticky Button -->
-<div id="sticky-booker" class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] transition-opacity duration-300">
+<div id="sticky-booker" class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-[90%] transition-all duration-300">
     <a href="#book" class="flex items-center justify-center bg-[#48596b] text-[#efeae4] py-4 rounded-full shadow-2xl border border-white/20 tracking-[0.2em] uppercase font-bold text-sm backdrop-blur-sm active:scale-95 transition-all">Book Your Session</a>
 </div>
 
 <script>
-    function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-        document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
-    }
+    const menu = document.getElementById('mobile-menu');
+    const stickyBtn = document.getElementById('sticky-booker');
+    const bookSection = document.getElementById('book');
 
-    // SMART HIDE: Disappears when the booking form is reached
-    window.addEventListener('scroll', function() {
-        const stickyBtn = document.getElementById('sticky-booker');
-        const bookSection = document.getElementById('book');
+    function updateStickyVisibility() {
+        const isMenuOpen = !menu.classList.contains('hidden');
         const rect = bookSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
+        const isAtBookingForm = rect.top < window.innerHeight - 100;
+
+        if (isMenuOpen || isAtBookingForm) {
             stickyBtn.style.opacity = '0';
             stickyBtn.style.pointerEvents = 'none';
+            stickyBtn.style.transform = 'translate(-50%, 20px)';
         } else {
             stickyBtn.style.opacity = '1';
             stickyBtn.style.pointerEvents = 'auto';
+            stickyBtn.style.transform = 'translate(-50%, 0)';
         }
-    });
+    }
+
+    function toggleMenu() {
+        menu.classList.toggle('hidden');
+        const isMenuOpen = !menu.classList.contains('hidden');
+        document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+        updateStickyVisibility();
+    }
+
+    window.addEventListener('scroll', updateStickyVisibility);
 
     const form = document.getElementById('booking-form');
     form.addEventListener('submit', async function(event) {
@@ -338,8 +260,11 @@
         if (response.ok) {
             form.classList.add('hidden');
             document.getElementById('success-msg').classList.remove('hidden');
+            updateStickyVisibility();
         } else { alert("Error sending form."); }
     });
+
+    updateStickyVisibility();
 </script>
 </body>
 </html>
