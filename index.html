@@ -25,7 +25,7 @@
 <body class="selection-theme text-[#48596b] bg-[#efeae4] min-h-screen">
 
 <!-- Navigation -->
-<nav class="fixed w-full top-0 z-50 bg-[#efeae4]/90 backdrop-blur-md border-b border-[#a68a69]/20 transition-all duration-300">
+<nav class="fixed w-full top-0 z-50 bg-[#efeae4]/90 backdrop-blur-md border-b border-[#a68a69]/20">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="flex justify-between items-center h-28">
             <a href="#home" class="flex items-center gap-4 group">
@@ -41,12 +41,64 @@
                 <a href="#testimonials" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
                 <a href="#book" class="bg-[#48596b] text-[#efeae4] px-6 py-2.5 rounded-full hover:bg-[#7a90a8] transition-all shadow-sm">Book a Session</a>
             </div>
-            <button class="md:hidden text-[#48596b]" onclick="toggleMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-[#48596b] p-2" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </div>
     </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-[#efeae4] flex flex-col items-center justify-center gap-8 text-xl tracking-[0.2em] uppercase font-light">
+    <button class="absolute top-10 right-10 text-[#48596b]" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <a href="#philosophy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
+    <a href="#offerings" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
+    <a href="#testimonials" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
+    <a href="#book" onclick="toggleMenu()" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full">Book a Session</a>
+</div>
+
+<!-- Smart Sticky Button -->
+<div id="sticky-booker" class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-[90%] transition-all duration-300 transform">
+    <a href="#book" class="flex items-center justify-center bg-[#48596b] text-[#efeae4] py-4 rounded-full shadow-2xl border border-white/20 tracking-[0.2em] uppercase font-bold text-sm backdrop-blur-sm active:scale-95 transition-all">Book Your Session</a>
+</div>
+
+<script>
+    const menu = document.getElementById('mobile-menu');
+    const stickyBtn = document.getElementById('sticky-booker');
+    const bookSection = document.getElementById('book');
+
+    function updateStickyVisibility() {
+        const rect = bookSection.getBoundingClientRect();
+        const isMenuOpen = !menu.classList.contains('hidden');
+        const isAtBookingForm = rect.top < window.innerHeight - 100;
+
+        // Hide if menu is open OR if user is already looking at the booking form
+        if (isMenuOpen || isAtBookingForm) {
+            stickyBtn.style.opacity = '0';
+            stickyBtn.style.pointerEvents = 'none';
+            stickyBtn.style.transform = 'translate(-50%, 20px)';
+        } else {
+            stickyBtn.style.opacity = '1';
+            stickyBtn.style.pointerEvents = 'auto';
+            stickyBtn.style.transform = 'translate(-50%, 0)';
+        }
+    }
+
+    function toggleMenu() {
+        menu.classList.toggle('hidden');
+        document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
+        updateStickyVisibility();
+    }
+
+    // Monitor scroll for the booking form position
+    window.addEventListener('scroll', updateStickyVisibility);
+
+    // Initial check
+    updateStickyVisibility();
+</script>
 
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-[#efeae4] flex flex-col items-center justify-center gap-8 text-xl tracking-[0.2em] uppercase font-light">
