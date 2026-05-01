@@ -61,7 +61,7 @@
 </div>
 
 <!-- Smart Sticky Button -->
-<div id="sticky-booker" class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-[90%] transition-all duration-300 transform">
+<div id="sticky-booker" class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] w-[90%] transition-all duration-300">
     <a href="#book" class="flex items-center justify-center bg-[#48596b] text-[#efeae4] py-4 rounded-full shadow-2xl border border-white/20 tracking-[0.2em] uppercase font-bold text-sm backdrop-blur-sm active:scale-95 transition-all">Book Your Session</a>
 </div>
 
@@ -70,34 +70,66 @@
     const stickyBtn = document.getElementById('sticky-booker');
     const bookSection = document.getElementById('book');
 
-    function updateStickyVisibility() {
-        const rect = bookSection.getBoundingClientRect();
+    /**
+     * CORE VISIBILITY LOGIC
+     * This handles the "Hide when menu open" and "Hide when at bottom" rules.
+     */
+    function handleVisibility() {
         const isMenuOpen = !menu.classList.contains('hidden');
-        const isAtBookingForm = rect.top < window.innerHeight - 100;
-
-        // Hide if menu is open OR if user is already looking at the booking form
-        if (isMenuOpen || isAtBookingForm) {
-            stickyBtn.style.opacity = '0';
-            stickyBtn.style.pointerEvents = 'none';
-            stickyBtn.style.transform = 'translate(-50%, 20px)';
-        } else {
-            stickyBtn.style.opacity = '1';
-            stickyBtn.style.pointerEvents = 'auto';
-            stickyBtn.style.transform = 'translate(-50%, 0)';
+        
+        // 1. If menu is open, delete the button from view entirely
+        if (isMenuOpen) {
+            stickyBtn.style.display = 'none';
+            return;
         }
+
+        // 2. Check if we are at the booking section using the Observer state
+        // (Handled by the IntersectionObserver below for better accuracy)
+        stickyBtn.style.display = 'block';
     }
 
+    /**
+     * TOGGLE MENU
+     */
     function toggleMenu() {
         menu.classList.toggle('hidden');
-        document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
-        updateStickyVisibility();
+        const isMenuOpen = !menu.classList.contains('hidden');
+        document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+        
+        handleVisibility();
     }
 
-    // Monitor scroll for the booking form position
-    window.addEventListener('scroll', updateStickyVisibility);
+    /**
+     * INTERSECTION OBSERVER
+     * Automatically hides the button as soon as the #book section is visible
+     */
+    const observerOptions = {
+        root: null,
+        threshold: 0.1 // Triggers when 10% of the booking section is visible
+    };
 
-    // Initial check
-    updateStickyVisibility();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Hide when booking section is on screen
+                stickyBtn.style.opacity = '0';
+                stickyBtn.style.pointerEvents = 'none';
+                stickyBtn.style.transform = 'translate(-50%, 20px)';
+            } else {
+                // Show when away from booking section (unless menu is open)
+                if (menu.classList.contains('hidden')) {
+                    stickyBtn.style.opacity = '1';
+                    stickyBtn.style.pointerEvents = 'auto';
+                    stickyBtn.style.transform = 'translate(-50%, 0)';
+                }
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(bookSection);
+
+    // Initial check on load
+    handleVisibility();
 </script>
 
 <!-- Mobile Menu Overlay -->
