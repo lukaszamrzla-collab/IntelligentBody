@@ -36,32 +36,30 @@
 
 <!-- Navigation -->
 <nav class="fixed w-full top-0 z-50 bg-[#efeae4]/90 backdrop-blur-md border-b border-[#a68a69]/20">
-    <!-- Reduced side padding slightly on laptops to give the menu more horizontal breathing room -->
-    <div class="max-w-7xl mx-auto px-4 lg:px-8">
-        <div class="flex justify-between items-center h-28 gap-4 xl:gap-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 xl:px-12">
+        <div class="flex justify-between items-center h-28 gap-4 lg:gap-8 xl:gap-12">
             <!-- Logo Section -->
-            <a href="#home" class="flex items-center gap-2 xl:gap-4 group flex-shrink-0">
-                <!-- Scaled image size dynamically -->
-                <img src="logo.png" alt="Logo" class="h-12 md:h-14 lg:h-16 xl:h-20 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.style.display='none'">
+            <a href="#home" class="flex items-center gap-3 md:gap-4 group flex-shrink-0">
+                <!-- Enlarged logo image back to premium sizing -->
+                <img src="logo.png" alt="Logo" class="h-14 lg:h-18 xl:h-20 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.style.display='none'">
                 <div class="flex flex-col justify-center pt-1">
-                    <!-- Scaled main logo text -->
-                    <span class="text-sm lg:text-base xl:text-lg tracking-widest xl:tracking-[0.15em] uppercase font-light text-[#48596b] leading-normal whitespace-nowrap">The Intelligent Body</span>
-                    <!-- Scaled tagline text -->
-                    <span class="text-[#a68a69] tracking-wider xl:tracking-[0.12em] uppercase text-[8px] lg:text-[9px] xl:text-xs font-semibold mt-1 block whitespace-nowrap">Yoga Academy & Private Mentor</span>
+                    <!-- Increased size from text-sm to text-base/lg on notebook -->
+                    <span class="text-base lg:text-lg xl:text-xl tracking-[0.15em] uppercase font-light text-[#48596b] leading-normal whitespace-nowrap">The Intelligent Body</span>
+                    <!-- Increased tagline text size so it is actually legible -->
+                    <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[9px] lg:text-[11px] xl:text-xs font-semibold mt-1 block whitespace-nowrap">Yoga Academy & Private Mentor</span>
                 </div>
             </a>
             
-            <!-- Desktop Menu (Now visible on laptops again, scaled down to fit) -->
-            <div class="hidden lg:flex items-center gap-4 xl:gap-8 text-[11px] xl:text-sm tracking-wider xl:tracking-widest uppercase font-medium whitespace-nowrap">
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-5 xl:gap-8 text-[13px] xl:text-sm tracking-widest uppercase font-medium whitespace-nowrap">
                 <a href="#philosophy" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
                 <a href="#academy" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
                 <a href="#offerings" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
                 <a href="#testimonials" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
-                <!-- Scaled button padding -->
-                <a href="#book" class="bg-[#48596b] text-[#efeae4] px-4 xl:px-6 py-2 xl:py-2.5 rounded-full hover:bg-[#7a90a8] transition-all shadow-sm">Book a Session</a>
+                <a href="#book" class="bg-[#48596b] text-[#efeae4] px-5 xl:px-6 py-2.5 rounded-full hover:bg-[#7a90a8] transition-all shadow-sm">Book a Session</a>
             </div>
             
-            <!-- Mobile Menu Toggle (Only appears on tablets and phones) -->
+            <!-- Mobile Menu Toggle -->
             <button class="lg:hidden text-[#48596b] p-2 ml-auto" onclick="toggleMenu()" aria-label="Toggle Menu">
                 <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
@@ -71,18 +69,13 @@
 
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-[#efeae4] flex flex-col items-center justify-center">
-    <!-- Mobile Close Button -->
     <button class="absolute top-10 right-10 text-[#48596b]" onclick="toggleMenu()">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
-
-    <!-- Logo in Mobile Menu -->
     <div class="mb-12 flex flex-col items-center gap-4">
         <img src="logo.png" alt="Logo" class="h-24 w-auto object-contain" onerror="this.style.display='none'">
         <span class="text-lg tracking-[0.2em] uppercase font-light text-[#48596b]">The Intelligent Body</span>
     </div>
-
-    <!-- Mobile Links -->
     <div class="flex flex-col items-center gap-6 text-xl tracking-[0.2em] uppercase font-light">
         <a href="#philosophy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
         <a href="#academy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
@@ -150,16 +143,14 @@
 <section id="academy" class="py-24 bg-[#efeae4] border-t border-[#a68a69]/10">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs font-bold mb-3 block">Yoga Alliance US Registered School</span>
-            <h2 class="text-3xl md:text-5xl font-light text-[#48596b] uppercase tracking-[0.2em] mb-4">200-Hour Teacher Training Certification</h2>
+            <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs font-bold mb-3 block">RYS-200 Yoga Alliance Certified School</span>
+            <h2 class="text-3xl md:text-5xl font-light text-[#48596b] uppercase tracking-[0.2em] mb-4">RYT-200 Teacher Training Certification</h2>
             <p class="text-lg text-[#48596b]/70 max-w-3xl mx-auto font-light leading-relaxed">
                 Step into the role of a confident, deeply grounded instructor. Our comprehensive curriculum bridges the gap between functional anatomy and the rich traditions of yoga, empowering you to cultivate a safe, authentic, and purposeful teaching voice.
             </p>
         </div>
 
-        <!-- Upper Row: Details & Image Accent Panel -->
         <div class="grid lg:grid-cols-12 gap-12 items-center mb-20">
-            <!-- Program Specifications Table Card -->
             <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-[2.5rem] border border-[#a68a69]/20 shadow-sm space-y-6">
                 <div class="inline-flex bg-[#aecae8]/20 text-[#48596b] px-4 py-1.5 rounded-full text-xs uppercase font-semibold tracking-wider">
                     Applications Open
@@ -168,8 +159,6 @@
                 <p class="text-sm font-light leading-relaxed text-[#48596b]/80">
                     Built to meets global standards, this training explores holistic movement mechanics, nervous system regulation, and historical philosophy. You will transition smoothly from personal practice to leading conscious, high-quality public and private classes.
                 </p>
-                
-                <!-- Core Educational Categories Standard Layout -->
                 <div class="pt-4 border-t border-[#efeae4] grid grid-cols-2 gap-4">
                     <div class="p-4 bg-[#efeae4]/30 rounded-xl">
                         <span class="block text-xs font-bold text-[#a68a69] uppercase tracking-wider mb-1">Techniques & Practice</span>
@@ -189,21 +178,17 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Balanced Secondary Photo Frame Placement -->
             <div class="lg:col-span-5 w-full max-w-sm mx-auto relative">
                 <div class="absolute top-6 -right-4 w-full h-full bg-[#7a90a8] rounded-t-[8rem] rounded-b-2xl -z-10 opacity-30"></div>
                 <img src="academy-training.png" alt="Yoga Teacher Training Academy Course Abu Dhabi" class="w-full h-[480px] object-cover rounded-t-[8rem] rounded-b-2xl shadow-md border-4 border-white transition-all duration-300 hover:scale-[1.01]" onerror="this.src='profile.png';">
             </div>
         </div>
 
-        <!-- Lower Row: 4 Comprehensive Modules Curated From Manual Content -->
         <div class="text-center mb-10">
             <h3 class="text-2xl font-light uppercase tracking-[0.15em] text-[#48596b]">Course Curriculum</h3>
         </div>
         
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Module 01: Posture Architecture & Alignment -->
             <div class="bg-white p-8 rounded-3xl border border-[#a68a69]/10 shadow-sm flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-4">
@@ -219,8 +204,6 @@
                     Key Focus: Sthiram & Sukham Alignment Framework
                 </div>
             </div>
-
-            <!-- Module 02: Breath & Energetic Systems -->
             <div class="bg-white p-8 rounded-3xl border border-[#a68a69]/10 shadow-sm flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-4">
@@ -236,8 +219,6 @@
                     Key Focus: Vagus Nerve Stimulation & Mental Stillness
                 </div>
             </div>
-
-            <!-- Module 03: History & Philosophical Lineages -->
             <div class="bg-white p-8 rounded-3xl border border-[#a68a69]/10 shadow-sm flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-4">
@@ -253,8 +234,6 @@
                     Key Focus: Mind Cultivation & Traditional Mantra Philosophy
                 </div>
             </div>
-
-            <!-- Module 04: Professional Pedagogy -->
             <div class="bg-white p-8 rounded-3xl border border-[#a68a69]/10 shadow-sm flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-4">
