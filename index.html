@@ -37,23 +37,27 @@
 <!-- Navigation -->
 <nav class="fixed w-full top-0 z-50 bg-[#efeae4]/90 backdrop-blur-md border-b border-[#a68a69]/20">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="flex justify-between items-center h-28">
-            <a href="#home" class="flex items-center gap-3 md:gap-4 group">
-                <img src="logo.png" alt="Logo" class="h-12 md:h-20 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.style.display='none'">
+        <div class="flex justify-between items-center h-28 gap-6 xl:gap-12">
+            <!-- Logo Section -->
+            <a href="#home" class="flex items-center gap-3 md:gap-4 group flex-shrink-0">
+                <img src="logo.png" alt="Logo" class="h-12 md:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.style.display='none'">
                 <div class="flex flex-col justify-center pt-1">
-                    <span class="text-sm md:text-lg lg:text-xl tracking-[0.15em] md:tracking-[0.2em] uppercase font-light text-[#48596b] leading-normal whitespace-nowrap">The Intelligent Body</span>
-                    <span class="text-[#a68a69] tracking-[0.12em] md:tracking-[0.2em] uppercase text-[8px] md:text-xs font-semibold mt-1 block whitespace-nowrap">Yoga Academy & Private Mentor</span>
+                    <span class="text-base lg:text-lg tracking-[0.15em] uppercase font-light text-[#48596b] leading-normal whitespace-nowrap">The Intelligent Body</span>
+                    <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[9px] lg:text-xs font-semibold mt-1 block whitespace-nowrap">Yoga Academy & Private Mentor</span>
                 </div>
             </a>
-            <div class="hidden md:flex items-center gap-8 text-sm tracking-widest uppercase font-medium">
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-4 xl:gap-8 text-xs xl:text-sm tracking-widest uppercase font-medium whitespace-nowrap">
                 <a href="#philosophy" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
                 <a href="#academy" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
                 <a href="#offerings" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
                 <a href="#testimonials" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
-                <a href="#book" class="bg-[#48596b] text-[#efeae4] px-6 py-2.5 rounded-full hover:bg-[#7a90a8] transition-all shadow-sm">Book a Session</a>
+                <a href="#book" class="bg-[#48596b] text-[#efeae4] px-5 xl:px-6 py-2.5 rounded-full hover:bg-[#7a90a8] transition-all shadow-sm">Book a Session</a>
             </div>
-            <!-- Mobile Menu Toggle -->
-            <button class="md:hidden text-[#48596b] p-2" onclick="toggleMenu()" aria-label="Toggle Menu">
+            
+            <!-- Mobile Menu Toggle (Now shows on tablets to save space) -->
+            <button class="lg:hidden text-[#48596b] p-2 ml-auto" onclick="toggleMenu()" aria-label="Toggle Menu">
                 <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </div>
