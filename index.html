@@ -610,11 +610,15 @@
         const closeBtn = document.getElementById('close-popup');
         
         if (popup && closeBtn) {
-            // Show popup with a slight delay
-            setTimeout(() => {
-                popup.classList.remove('hidden');
-                popup.classList.add('flex');
-            }, 1500);
+            // Check sessionStorage so the popup only shows once per browser tab session
+            if (!sessionStorage.getItem('promoPopupShown')) {
+                // Show popup with a slight delay
+                setTimeout(() => {
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    sessionStorage.setItem('promoPopupShown', 'true');
+                }, 1500);
+            }
 
             closeBtn.addEventListener('click', () => {
                 popup.classList.add('hidden');
