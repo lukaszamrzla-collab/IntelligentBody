@@ -12,36 +12,64 @@
     </script>
 
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 1. Primary SEO Title Tag (50–60 Characters max) -->
-<title>The Intelligent Body | 200Hr YTT & Private Yoga Abu Dhabi</title>
+    <!-- 1. Primary SEO Title Tag -->
+    <title>The Intelligent Body | 200Hr YTT, Private YTT & The Ritual Abu Dhabi</title>
 
-<!-- 2. Primary SEO Meta Description (150–160 Characters max) -->
-<meta name="description" content="Abu Dhabi's premier yoga mentor. Offering 200-Hour YTT certification, The Signature Ritual in-home sanctuary, private sessions, and corporate wellness.">
+    <!-- 2. Primary SEO Meta Description -->
+    <meta name="description" content="Abu Dhabi's premier yoga mentor. Offering 200-Hour YTT certification, Private At-Home YTT, The Signature Ritual in-home sanctuary, private sessions, and corporate wellness.">
 
-<!-- 3. Canonical Tag (tells Google this is the official domain) -->
-<link rel="canonical" href="https://theintelligentbody.ae/">
+    <!-- 3. SEO Keywords -->
+    <meta name="keywords" content="Yoga Abu Dhabi, 200-Hour YTT, Private YTT, The Signature Ritual, Private Yoga Mentor, Corporate Wellness, Yoga Alliance Certification, Adel Yoga">
 
-<!-- 4. Open Graph / WhatsApp / Facebook Link Preview Tags -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://theintelligentbody.ae/">
-<meta property="og:title" content="The Intelligent Body | Yoga Academy Abu Dhabi">
-<meta property="og:description" content="200-Hour Yoga Alliance Certification, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
-<meta property="og:image" content="https://theintelligentbody.ae/profile.png">
-<meta property="og:site_name" content="The Intelligent Body">
+    <!-- 4. Canonical Tag -->
+    <link rel="canonical" href="https://theintelligentbody.ae/">
 
-<!-- 5. Twitter / X Link Preview Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Intelligent Body | Yoga Academy Abu Dhabi">
-<meta name="twitter:description" content="200-Hour Yoga Alliance Certification, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
-<meta name="twitter:image" content="https://theintelligentbody.ae/profile.png">
+    <!-- 5. Open Graph / WhatsApp / Facebook Link Preview Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theintelligentbody.ae/">
+    <meta property="og:title" content="The Intelligent Body | Yoga Academy, Private YTT & The Ritual Abu Dhabi">
+    <meta property="og:description" content="200-Hour Yoga Alliance Certification, Private At-Home YTT, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
+    <meta property="og:image" content="https://theintelligentbody.ae/profile.png">
+    <meta property="og:site_name" content="The Intelligent Body">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="logo.png">
+    <!-- 6. Twitter / X Link Preview Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Intelligent Body | Yoga Academy, Private YTT & The Ritual Abu Dhabi">
+    <meta name="twitter:description" content="200-Hour Yoga Alliance Certification, Private At-Home YTT, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
+    <meta name="twitter:image" content="https://theintelligentbody.ae/profile.png">
+
+    <!-- 7. Local Business Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "The Intelligent Body",
+      "image": "https://theintelligentbody.ae/logo.png",
+      "url": "https://theintelligentbody.ae/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Abu Dhabi",
+        "addressCountry": "AE"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Adel"
+      },
+      "description": "Abu Dhabi's premier yoga mentor offering 200-Hour YTT, Private At-Home YTT, The Signature Ritual, private sessions, and corporate wellness.",
+      "sameAs": [
+        "https://www.instagram.com/theintelligentbody.ae/",
+        "https://www.linkedin.com/company/theintelligentbodyae/"
+      ]
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font: Reserved exclusively for The Signature Ritual -->
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     
     <style>
@@ -83,7 +111,28 @@
         @media (max-width: 768px) {
             footer { padding-bottom: 80px; }
         }
-    </style>
+
+        /* Background Wave Animations */
+    @keyframes wave {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-25%); }
+        100% { transform: translateX(0); }
+    }
+    @keyframes wave-reverse {
+        0% { transform: translateX(-25%); }
+        50% { transform: translateX(0); }
+        100% { transform: translateX(-25%); }
+    }
+    
+    /* Front wave speed */
+    .animate-wave {
+        animation: wave 18s ease-in-out infinite;
+    }
+    /* Back wave speed */
+    .animate-wave-slow {
+        animation: wave-reverse 24s ease-in-out infinite;
+    }
+</style>
 </head>
 <body class="selection-theme text-[#48596b] bg-[#efeae4] min-h-screen font-sans">
 
@@ -101,7 +150,7 @@
             <p class="text-sm text-[#48596b]/80 mb-6 font-light leading-relaxed">
                 Starting <strong>25th September and lead by our founder Adel</strong>. Secure your spot now and take advantage of our exclusive Early Bird pricing. We also offer PRIVATE YYT-200 at your home. Click for more information.
             </p>
-            <button onclick="document.getElementById('close-popup').click(); document.getElementById('academy').scrollIntoView({behavior: 'smooth'});" class="bg-[#48596b] text-[#efeae4] px-8 py-3.5 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all w-full shadow-sm">
+            <button onclick="document.getElementById('close-popup').click(); document.getElementById('academy').scrollIntoView({behavior: 'smooth'});" class="bg-[#48596b] text-[#efeae4] px-8 py-3.5 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all w-full shadow-sm hover:-translate-y-1 hover:shadow-lg duration-300">
                 I Am Ready For My Next Chapter
             </button>
         </div>
@@ -123,12 +172,29 @@
                 </div>
             </a>
             
-            <!-- Desktop Menu (Testimonials removed) -->
+            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-6 xl:gap-10 text-[13px] xl:text-sm tracking-widest uppercase font-medium whitespace-nowrap">
                 <a href="#academy" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
                 <a href="#signature-ritual" class="hover:text-[#7a90a8] transition-colors">The Signature Ritual</a>
                 <a href="#private-session" class="hover:text-[#7a90a8] transition-colors">Private Session</a>
                 <a href="#corporate-wellness" class="hover:text-[#7a90a8] transition-colors">Corporate Wellness</a>
+                
+                <!-- Desktop Dropdown -->
+                <div class="relative group py-4 cursor-pointer">
+                    <span class="hover:text-[#7a90a8] transition-colors flex items-center gap-1 text-[#48596b]">
+                        MENU 
+                        <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                    <div class="absolute right-0 top-full mt-[-10px] w-56 bg-[#efeae4]/95 backdrop-blur-md border border-[#a68a69]/20 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-3 z-50">
+                        <a href="#academy" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Teacher Academy</a>
+                        <a href="#private-ytt" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">At-Home Option</a>
+                        <a href="#signature-ritual" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">The Signature Ritual</a>
+                        <a href="#private-session" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Private Session</a>
+                        <a href="#corporate-wellness" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Corporate Wellness</a>
+                        <a href="#philosophy" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">About</a>
+                        <a href="#book" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Contact Us</a>
+                    </div>
+                </div>
             </div>
             
             <!-- Mobile Menu Toggle -->
@@ -150,32 +216,59 @@
     </div>
     <div class="flex flex-col items-center gap-6 text-xl tracking-[0.2em] uppercase font-light">
         <a href="#academy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
+        <a href="#private-ytt" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">At-Home Option</a>
         <a href="#signature-ritual" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">The Signature Ritual</a>
         <a href="#private-session" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Private Session</a>
         <a href="#corporate-wellness" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Corporate Wellness</a>
+        <a href="#philosophy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">About</a>
+        <a href="#book" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Contact Us</a>
     </div>
 </div>
 
 <!-- Hero Section -->
-<section id="home" class="pt-36 pb-16 lg:pt-44 lg:pb-24 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-20">
-    <div class="flex-1 w-full max-w-sm lg:max-w-md xl:max-w-lg relative fade-in order-1 lg:order-1">
-        <div class="absolute top-8 -right-4 lg:-right-8 w-full h-full bg-[#aecae8] rounded-t-[8rem] rounded-b-3xl -z-10 opacity-40"></div>
-        <img src="profile.png" alt="Adel" class="w-full h-[420px] lg:h-[520px] xl:h-[620px] object-cover rounded-t-[8rem] rounded-b-3xl shadow-lg border-4 border-white">
-    </div>
-    <div class="flex-1 text-center lg:text-left fade-in order-2 lg:order-2" style="animation-delay: 0.2s;">
-        <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs lg:text-sm font-semibold mb-4 block">ERYT-500 Yoga mentor in Abu Dhabi</span>
-        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-light text-[#48596b] mb-6 leading-tight">
-            Movement. <br>
-            <span class="italic text-[#7a90a8]">Breath.</span> <br>
-            Connection.
-        </h1>
-        <p class="text-base lg:text-lg text-[#48596b]/80 mb-10 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
-            Cultivate mental clarity and physical resilience with Abu Dhabi's premier yoga guide. Explore deep alignment during our certified teacher courses or intimate private mentorship.
-        </p>
-        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-            <a href="#book" class="bg-[#48596b] text-[#efeae4] px-8 py-4 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all w-full sm:w-auto text-center">Start Your Journey</a>
-            <a href="#academy" class="bg-transparent border border-[#a68a69] text-[#a68a69] px-8 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-[#a68a69]/10 transition-all w-full sm:w-auto text-center font-bold">Teacher Training</a>
+<section id="home" class="relative overflow-hidden w-full pt-36 pb-16 lg:pt-44 lg:pb-24">
+    
+    <!-- Content Container (Constrained width & centered) -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-20 relative z-10">
+        
+        <!-- Left Image Column -->
+        <div class="flex-1 w-full max-w-sm lg:max-w-md xl:max-w-lg relative fade-in order-1 lg:order-1">
+            <div class="absolute top-8 -right-4 lg:-right-8 w-full h-full bg-[#aecae8] rounded-t-[8rem] rounded-b-3xl -z-10 opacity-40"></div>
+            <img src="profile.png" alt="Adel" class="w-full h-[420px] lg:h-[520px] xl:h-[620px] object-cover rounded-t-[8rem] rounded-b-3xl shadow-lg border-4 border-white transition-transform duration-[3000ms] ease-out hover:scale-110 overflow-hidden">
         </div>
+
+        <!-- Right Text Column -->
+        <div class="flex-1 text-center lg:text-left fade-in order-2 lg:order-2" style="animation-delay: 0.2s;">
+            <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs lg:text-sm font-semibold mb-4 block">Professional Yoga Academy in Abu Dhabi</span>
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-light text-[#48596b] mb-6 leading-tight">
+                Intelligence. <br>
+                <span class="italic text-[#7a90a8]">Awareness.</span> <br>
+                Movement.
+            </h1>
+            <p class="text-base lg:text-lg text-[#48596b]/80 mb-10 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
+                Cultivate mental clarity and physical resilience with Abu Dhabi's premier yoga academy. Explore deep alignment during our certified teacher courses, private rituals, corporate workshops or intimate mentorship.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                <a href="#book" class="bg-[#48596b] text-[#efeae4] px-8 py-4 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all w-full sm:w-auto text-center hover:-translate-y-1 hover:shadow-lg duration-300">Start Your Journey</a>
+                <a href="#academy" class="bg-transparent border border-[#a68a69] text-[#a68a69] px-8 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-[#a68a69]/10 transition-all w-full sm:w-auto text-center font-bold hover:-translate-y-1 hover:shadow-lg duration-300">Teacher Training</a>
+            </div>
+        </div>
+
+    </div> <!-- Inner Content Container Closes Here -->
+
+    <!-- Full-Width Animated Double Wave Background -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
+        
+        <!-- Back Wave Layer (Taller, moves slower, more transparent) -->
+        <svg class="absolute bottom-0 block w-[200%] h-[120px] md:h-[180px] animate-wave-slow opacity-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#a68a69"></path>
+        </svg>
+
+        <!-- Front Wave Layer (Shorter, moves slightly faster, slightly darker) -->
+        <svg class="relative block w-[200%] h-[100px] md:h-[140px] animate-wave opacity-40" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#a68a69"></path>
+        </svg>
+
     </div>
 </section>
 
@@ -229,10 +322,10 @@
             <!-- Image Grid for Studio Photos -->
             <div class="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div class="w-full bg-[#dfd9d2] rounded-2xl overflow-hidden shadow-sm border border-[#a68a69]/20 aspect-[4/3] relative group">
-                    <img src="reed-wellness-center-abu-dhabi-1.png" alt="Reed Women Beauty And Wellness Center" class="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                    <img src="reed-wellness-center-abu-dhabi-1.png" alt="Reed Women Beauty And Wellness Center" class="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105 overflow-hidden duration-[3000ms] ease-out hover:scale-110">
                 </div>
                 <div class="w-full bg-[#dfd9d2] rounded-2xl overflow-hidden shadow-sm border border-[#a68a69]/20 aspect-[4/3] relative group">
-                    <img src="reed-wellness-center-abu-dhabi-2.png" alt="Reed Women Beauty And Wellness Center Studio" class="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                    <img src="reed-wellness-center-abu-dhabi-2.png" alt="Reed Women Beauty And Wellness Center Studio" class="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105 overflow-hidden duration-[3000ms] ease-out hover:scale-110">
                 </div>
             </div>
         </div>
@@ -439,7 +532,7 @@
                             </p>
                         </div>
                         
-                        <button type="submit" class="w-full bg-[#efeae4] text-[#48596b] text-center py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 mt-4">
+                        <button type="submit" class="w-full bg-[#efeae4] text-[#48596b] text-center py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 mt-4 hover:-translate-y-1 hover:shadow-lg">
                             Submit For more Details
                         </button>
                     </form>
@@ -493,7 +586,7 @@
             <div class="relative group rounded-3xl overflow-hidden shadow-sm hover:shadow-md border border-[#a68a69]/25 aspect-[4/3] bg-[#48596b]/10">
                 <img src="private-ytt-1.png" 
                      alt="Private At-Home Yoga Sanctuary" 
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 overflow-hidden duration-[3000ms] ease-out hover:scale-110"
                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80';">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#48596b]/70 via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-6 text-[#efeae4] text-xs uppercase tracking-widest font-semibold flex items-center gap-2">
@@ -506,7 +599,7 @@
             <div class="relative group rounded-3xl overflow-hidden shadow-sm hover:shadow-md border border-[#a68a69]/25 aspect-[4/3] bg-[#48596b]/10">
                 <img src="private-ytt-2.png" 
                      alt="One-on-One Yoga Teacher Training Guidance" 
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 overflow-hidden duration-[3000ms] ease-out hover:scale-110"
                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80';">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#48596b]/70 via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-6 text-[#efeae4] text-xs uppercase tracking-widest font-semibold flex items-center gap-2">
@@ -640,7 +733,7 @@
                     </div>
                     
                     <div class="text-center">
-                        <button type="submit" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#7a90a8] transition-all w-full md:w-auto shadow-sm">
+                        <button type="submit" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#7a90a8] transition-all w-full md:w-auto shadow-sm hover:-translate-y-1 hover:shadow-lg duration-300">
                             Submit Request
                         </button>
                     </div>
@@ -670,7 +763,7 @@
                 A 90-minute bespoke wellness sanctuary brought directly to the privacy of your residence. Align your body, command your mind, and invest in profound longevity without ever stepping outside your door.
             </p>
             
-            <a href="#ritual-inquiry" class="inline-block bg-transparent border border-[#a68a69] text-[#a68a69] hover:bg-[#a68a69] hover:text-white px-10 py-4 rounded-full tracking-[0.2em] uppercase text-xs font-bold transition-all duration-300 shadow-md">
+            <a href="#ritual-inquiry" class="inline-block bg-transparent border border-[#a68a69] text-[#a68a69] hover:bg-[#a68a69] hover:text-white px-10 py-4 rounded-full tracking-[0.2em] uppercase text-xs font-bold transition-all duration-300 shadow-md hover:-translate-y-1 hover:shadow-lg">
                 Inquire For Availability
             </a>
         </div>
@@ -723,7 +816,7 @@
                     </p>
                 </div>
                 <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
-                    <img src="gyo.png" alt="The Arrival - Gyokuro Tea Ceremony" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <img src="gyo.png" alt="The Arrival - Gyokuro Tea Ceremony" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700 overflow-hidden duration-[3000ms] ease-out hover:scale-110" onerror="this.style.display='none'">
                     <div class="absolute inset-0 bg-[#48596b]/10 mix-blend-multiply"></div>
                 </div>
             </div>
@@ -739,7 +832,7 @@
                     </p>
                 </div>
                 <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
-                    <img src="align.png" alt="The Alignment - Bespoke Movement Protocol" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <img src="align.png" alt="The Alignment - Bespoke Movement Protocol" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700 overflow-hidden duration-[3000ms] ease-out hover:scale-110" onerror="this.style.display='none'">
                     <div class="absolute inset-0 bg-[#a68a69]/10 mix-blend-multiply"></div>
                 </div>
             </div>
@@ -755,7 +848,7 @@
                     </p>
                 </div>
                 <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
-                    <img src="meditation.png" alt="The Stillness - Yoga Nidra & Meditation" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <img src="meditation.png" alt="The Stillness - Yoga Nidra & Meditation" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700 overflow-hidden duration-[3000ms] ease-out hover:scale-110" onerror="this.style.display='none'">
                     <div class="absolute inset-0 bg-[#48596b]/20 mix-blend-multiply"></div>
                 </div>
             </div>
@@ -771,7 +864,7 @@
                     </p>
                 </div>
                 <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
-                    <img src="matcha.png" alt="The Integration - Ceremonial Matcha" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <img src="matcha.png" alt="The Integration - Ceremonial Matcha" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700 overflow-hidden duration-[3000ms] ease-out hover:scale-110" onerror="this.style.display='none'">
                     <div class="absolute inset-0 bg-[#a68a69]/10 mix-blend-multiply"></div>
                 </div>
             </div>
@@ -858,7 +951,7 @@
                     </div>
 
                     <div class="mt-8 pt-4">
-                        <a href="#ritual-inquiry" class="block w-full bg-[#48596b] text-[#efeae4] text-center py-3.5 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-[#a68a69] transition-all duration-300 shadow-sm">
+                        <a href="#ritual-inquiry" class="block w-full bg-[#48596b] text-[#efeae4] text-center py-3.5 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-[#a68a69] transition-all duration-300 shadow-sm hover:-translate-y-1 hover:shadow-lg">
                             Reserve Your Ritual
                         </a>
                     </div>
@@ -906,7 +999,7 @@
             </div>
             
             <div class="text-center pt-8">
-                <button type="submit" class="bg-transparent border border-[#a68a69] text-[#a68a69] px-12 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#a68a69] hover:text-white transition-all w-full md:w-auto shadow-sm">
+                <button type="submit" class="bg-transparent border border-[#a68a69] text-[#a68a69] px-12 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#a68a69] hover:text-white transition-all w-full md:w-auto shadow-sm hover:-translate-y-1 hover:shadow-lg duration-300">
                     Request Contact
                 </button>
                 <p class="text-[9px] text-[#efeae4]/40 mt-6 uppercase tracking-widest">
@@ -932,7 +1025,7 @@
                 </p>
             </div>
             <div class="w-full md:w-1/2 h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
-                <img src="private.png" alt="Private Session" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                <img src="private.png" alt="Private Session" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700 overflow-hidden duration-[3000ms] ease-out hover:scale-110" onerror="this.style.display='none'">
                 <div class="absolute inset-0 bg-[#48596b]/10 mix-blend-multiply"></div>
             </div>
         </div>
@@ -954,7 +1047,7 @@
                 </p>
             </div>
             <div class="w-full md:w-1/2 h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
-                <img src="corporate.png" alt="Corporate Wellness" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                <img src="corporate.png" alt="Corporate Wellness" class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:scale-105 transition-transform duration-700 overflow-hidden duration-[3000ms] ease-out hover:scale-110" onerror="this.style.display='none'">
                 <div class="absolute inset-0 bg-[#a68a69]/10 mix-blend-multiply"></div>
             </div>
         </div>
@@ -984,7 +1077,7 @@
                 
                 <div class="mt-12 flex flex-col items-center gap-4 border-t border-[#efeae4] pt-10">
                     <div class="w-28 h-28 rounded-full p-1 border-2 border-[#aecae8]">
-                        <img src="bio.jpg" alt="Adel" class="w-full h-full rounded-full object-cover">
+                        <img src="bio.jpg" alt="Adel" class="w-full h-full rounded-full object-cover overflow-hidden transition-transform duration-[3000ms] ease-out hover:scale-110">
                     </div>
                     <div class="text-center">
                         <p class="font-bold text-[#48596b] uppercase tracking-[0.4em] text-sm">Adel</p>
@@ -1050,7 +1143,7 @@
                 </div>
                 
                 <div class="text-center">
-                    <button type="submit" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#7a90a8] transition-all w-full md:w-auto shadow-sm">Submit Inquiry</button>
+                    <button type="submit" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#7a90a8] transition-all w-full md:w-auto shadow-sm hover:-translate-y-1 hover:shadow-lg duration-300">Submit Inquiry</button>
                 </div>
                 
             </div>
@@ -1059,9 +1152,19 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#48596b] text-[#efeae4] py-16 border-t border-[#a68a69]/20">
-    <div class="max-w-7xl mx-auto px-6 text-center flex flex-col items-center gap-6">
-        <!-- Re-added Footer Logo and Branding Block -->
+<footer class="relative bg-[#48596b] text-[#efeae4] pt-20 pb-12">
+    
+    <!-- Top Animated Wave Divider -->
+    <div class="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-[99%] pointer-events-none z-10">
+        <svg class="relative block w-[200%] h-[60px] md:h-[100px] animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#48596b"></path>
+        </svg>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="max-w-7xl mx-auto px-6 text-center flex flex-col items-center gap-6 relative z-20">
+        
+        <!-- Footer Logo and Branding Block -->
         <div class="flex flex-col items-center gap-3">
             <img src="logo.png" alt="Logo" class="h-16 w-auto object-contain brightness-0 invert opacity-80" onerror="this.style.display='none'">
             <div class="text-center">
@@ -1069,6 +1172,17 @@
                 <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[10px] font-semibold mt-1 block">Yoga Academy & Private Mentor</span>
             </div>
         </div>
+
+        <!-- Social Media Links -->
+        <div class="flex items-center gap-5 mt-2">
+            <a href="https://www.instagram.com/theintelligentbody.ae/" target="_blank" rel="noopener noreferrer" class="text-[#efeae4]/70 hover:text-[#a68a69] transition-colors" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/theintelligentbodyae/" target="_blank" rel="noopener noreferrer" class="text-[#efeae4]/70 hover:text-[#a68a69] transition-colors" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
+
         <hr class="w-16 border-[#a68a69]/30 my-2">
         <p class="text-xs font-light text-[#efeae4]/50 tracking-wider">
             &copy; 2026 The Intelligent Body. All rights reserved.
@@ -1202,7 +1316,7 @@
         
         <!-- Footer Action Button -->
         <div class="p-6 border-t border-[#a68a69]/20 text-center bg-white">
-            <button onclick="toggleTermsModal(false)" class="bg-[#48596b] text-[#efeae4] px-8 py-3 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all min-w-[160px]">
+            <button onclick="toggleTermsModal(false)" class="bg-[#48596b] text-[#efeae4] px-8 py-3 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all min-w-[160px] hover:-translate-y-1 hover:shadow-lg duration-300">
                 I Understand
             </button>
         </div>
