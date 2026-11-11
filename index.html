@@ -1259,6 +1259,58 @@
     });
 </script>
 
+<!-- ========================================== -->
+<!-- PROMOTIONAL POPUP MODAL (SPRING 2027 YTT)  -->
+<!-- ========================================== -->
+<div id="promo-popup" class="hidden fixed inset-0 z-[100] bg-[#48596b]/60 backdrop-blur-sm items-center justify-center p-4 sm:p-6">
+    <div class="bg-[#efeae4] rounded-[2.5rem] shadow-2xl w-full max-w-lg relative overflow-hidden border border-[#a68a69]/30 animate-pop-in p-6 sm:p-10 text-center flex flex-col items-center">
+        
+        <!-- Close Button (X) -->
+        <button id="close-popup" class="absolute top-5 right-5 text-[#48596b]/60 hover:text-[#48596b] transition-colors p-2 rounded-full hover:bg-white/50" aria-label="Close Announcement">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <!-- Accent Badge -->
+        <div class="inline-flex items-center gap-2 bg-[#a68a69]/15 border border-[#a68a69]/30 px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#a68a69] mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#a68a69]"></span>
+            Spring 2027 Intake • Starts 19 March 2027
+        </div>
+
+        <!-- Title -->
+        <h3 class="font-serif-luxury text-3xl sm:text-4xl text-[#48596b] font-light uppercase tracking-wide leading-tight mb-4">
+            200-Hour Yoga <br> Teacher Training
+        </h3>
+
+        <!-- Body Copy -->
+        <p class="text-xs sm:text-sm text-[#48596b]/85 font-light leading-relaxed mb-6 max-w-md">
+            Elevate your practice and master the art of teaching with Abu Dhabi's premier Yoga Alliance certified academy. Secure your <strong class="font-semibold text-[#a68a69]">Early Bird Rate</strong> and invite a friend to unlock our exclusive dual-enrollment discount.
+        </p>
+
+        <!-- Highlights Pill Container -->
+        <div class="grid grid-cols-2 gap-3 w-full max-w-xs mb-8">
+            <div class="bg-white/80 border border-[#a68a69]/20 p-3 rounded-2xl text-center shadow-xs">
+                <span class="block text-[9px] uppercase tracking-wider text-[#7a90a8] font-semibold mb-0.5">Early Bird Rate</span>
+                <span class="text-xs font-bold text-[#48596b]">AED 11,000</span>
+            </div>
+            <div class="bg-white/80 border border-[#a68a69]/20 p-3 rounded-2xl text-center shadow-xs">
+                <span class="block text-[9px] uppercase tracking-wider text-[#7a90a8] font-semibold mb-0.5">Special Perk</span>
+                <span class="text-xs font-bold text-[#a68a69]">Friend Discount</span>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 w-full max-w-xs">
+            <a href="#academy" onclick="document.getElementById('promo-popup').classList.add('hidden'); document.getElementById('promo-popup').classList.remove('flex');" class="bg-[#48596b] text-[#efeae4] py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#7a90a8] transition-all shadow-md hover:-translate-y-0.5 duration-300 w-full text-center">
+                Explore & Reserve
+            </a>
+            <button onclick="document.getElementById('promo-popup').classList.add('hidden'); document.getElementById('promo-popup').classList.remove('flex');" class="bg-transparent border border-[#a68a69]/40 text-[#a68a69] py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#a68a69]/10 transition-all duration-300 w-full text-center">
+                Maybe Later
+            </button>
+        </div>
+
+    </div>
+</div>
+
 <!-- Terms & Conditions Popup Modal -->
 <div id="terms-modal" class="hidden fixed inset-0 z-[110] bg-[#48596b]/60 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-[#efeae4] rounded-[2rem] shadow-2xl w-full max-w-2xl relative overflow-hidden border border-[#a68a69]/20 flex flex-col max-h-[85vh]">
