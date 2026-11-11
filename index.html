@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- NEW: Mobile Theme Color -->
+    <!-- Mobile Theme Color -->
     <meta name="theme-color" content="#efeae4">
 
     <!-- 1. Primary SEO Title Tag -->
@@ -23,7 +23,7 @@
     <!-- 2. Primary SEO Meta Description -->
     <meta name="description" content="Abu Dhabi's premier yoga mentor. Offering 200-Hour YTT certification, Private At-Home YTT, The Signature Ritual in-home sanctuary, private sessions, and corporate wellness.">
 
-    <!-- NEW: Explicit Crawler Instructions -->
+    <!-- Explicit Crawler Instructions -->
     <meta name="robots" content="index, follow">
 
     <!-- 3. SEO Keywords -->
@@ -123,26 +123,26 @@
         }
 
         /* Background Wave Animations */
-    @keyframes wave {
-        0% { transform: translateX(0); }
-        50% { transform: translateX(-25%); }
-        100% { transform: translateX(0); }
-    }
-    @keyframes wave-reverse {
-        0% { transform: translateX(-25%); }
-        50% { transform: translateX(0); }
-        100% { transform: translateX(-25%); }
-    }
-    
-    /* Front wave speed */
-    .animate-wave {
-        animation: wave 18s ease-in-out infinite;
-    }
-    /* Back wave speed */
-    .animate-wave-slow {
-        animation: wave-reverse 24s ease-in-out infinite;
-    }
-</style>
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-25%); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes wave-reverse {
+            0% { transform: translateX(-25%); }
+            50% { transform: translateX(0); }
+            100% { transform: translateX(-25%); }
+        }
+        
+        /* Front wave speed */
+        .animate-wave {
+            animation: wave 18s ease-in-out infinite;
+        }
+        /* Back wave speed */
+        .animate-wave-slow {
+            animation: wave-reverse 24s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body class="selection-theme text-[#48596b] bg-[#efeae4] min-h-screen font-sans">
 
@@ -215,7 +215,7 @@
 <!-- Hero Section -->
 <section id="home" class="relative overflow-hidden w-full pt-36 pb-16 lg:pt-44 lg:pb-24">
     
-    <!-- Content Container (Constrained width & centered) -->
+    <!-- Content Container -->
     <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-20 relative z-10">
         
         <!-- Left Image Column -->
@@ -241,17 +241,17 @@
             </div>
         </div>
 
-    </div> <!-- Inner Content Container Closes Here -->
+    </div>
 
     <!-- Full-Width Animated Double Wave Background -->
     <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
         
-        <!-- Back Wave Layer (Taller, moves slower, more transparent) -->
+        <!-- Back Wave Layer -->
         <svg class="absolute bottom-0 block w-[200%] h-[120px] md:h-[180px] animate-wave-slow opacity-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#a68a69"></path>
         </svg>
 
-        <!-- Front Wave Layer (Shorter, moves slightly faster, slightly darker) -->
+        <!-- Front Wave Layer -->
         <svg class="relative block w-[200%] h-[100px] md:h-[140px] animate-wave opacity-40" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#a68a69"></path>
         </svg>
@@ -275,7 +275,6 @@
        <!-- Intro Text Grid -->
         <div class="grid md:grid-cols-2 gap-0 md:gap-12 lg:gap-20 max-w-5xl mx-auto mb-20 text-base md:text-lg text-[#48596b] font-light leading-relaxed text-justify">
             <div>
-                <!-- We keep mb-6 here so it acts as the spacer on mobile when stacked -->
                 <p class="mb-6 md:mb-0">
                     <span class="font-medium text-[#a68a69]">Yoga is more than movement.</span> It is a practice that integrates the body, the breath and the mind. The Intelligent Body was created for those who want to teach yoga with depth, confidence and understanding. It blends modern anatomy and biomechanics with the timeless wisdom of yoga, offering a practical and thoughtful approach to both personal practice and teaching. Throughout the training, you will learn how the body moves, how to build a safe and sustainable asana practice, and how to adapt postures to meet the needs of different individuals. 
                 </p>
@@ -378,7 +377,7 @@
             </div>
         </div>
 
-<!-- Schedule and Registration Block -->
+        <!-- Schedule and Registration Block -->
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start mb-20 max-w-6xl mx-auto w-full">
             
             <!-- Schedule Card -->
@@ -539,10 +538,7 @@
     </div>
 </section>
 
-<!-- ========================================== -->
-<!-- NEW SECTION: PRIVATE AT-HOME 200-HOUR YTT   -->
-<!-- ========================================== -->
-
+<!-- PRIVATE AT-HOME 200-HOUR YTT -->
 <section id="private-ytt" class="py-24 bg-[#efeae4] border-t border-[#a68a69]/20 relative overflow-hidden">
     <!-- Subtle accent glow -->
     <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#a68a69]/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -726,10 +722,7 @@
     </div>
 </section>    
     
-<!-- ========================================== -->
-<!-- THE SIGNATURE RITUAL (WITH LUXURY SERIF)    -->
-<!-- ========================================== -->
-
+<!-- THE SIGNATURE RITUAL -->
 <section id="signature-ritual" class="relative py-24 md:py-32 bg-[#48596b] text-[#efeae4] overflow-hidden min-h-[85vh] flex items-center">
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#a68a69] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-float"></div>
     <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#7a90a8] rounded-full mix-blend-multiply filter blur-[150px] opacity-30 animate-float" style="animation-delay: -5s;"></div>
@@ -963,7 +956,6 @@
         
         <form action="https://formspree.io/f/xeedowqd" method="POST" class="space-y-8 max-w-xl mx-auto">
             
-            <!-- Added these two hidden fields to track where the form came from -->
             <input type="hidden" name="_subject" value="New Inquiry: The Ritual">
             <input type="hidden" name="form_source" value="Ritual Section Form">
 
@@ -1101,11 +1093,9 @@
         </div>
         
         <form id="booking-form" action="https://formspree.io/f/xeedowqd" method="POST" class="max-w-2xl mx-auto">
-            <!-- Hidden tags to identify this form in Formspree emails -->
             <input type="hidden" name="_subject" value="New Inquiry: General Inquiries">
             <input type="hidden" name="form_source" value="General Inquiries">
 
-            <!-- Sleek, subtle frosted container instead of a massive white block -->
             <div class="bg-white/40 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-[#a68a69]/10 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
                 
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -1172,101 +1162,12 @@
     </div>
 </footer>
 
-<script>
-    // Mobile Menu Toggle
-    function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    }
-
-    // Terms & Conditions Popup Toggle Function
-    function toggleTermsModal(show) {
-        const modal = document.getElementById('terms-modal');
-        if (show) {
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevents background scrolling
-        } else {
-            modal.classList.add('hidden');
-            document.body.style.overflow = ''; // Restores background scrolling
-        }
-    }
-
-    // Popup Close & Init / AJAX Formspree Redirect Handler
-    document.addEventListener('DOMContentLoaded', () => {
-        const popup = document.getElementById('promo-popup');
-        const closeBtn = document.getElementById('close-popup');
-        
-        if (popup && closeBtn) {
-            // Check sessionStorage so the popup only shows once per browser tab session
-            if (!sessionStorage.getItem('promoPopupShown')) {
-                // Show popup with a slight delay
-                setTimeout(() => {
-                    popup.classList.remove('hidden');
-                    popup.classList.add('flex');
-                    sessionStorage.setItem('promoPopupShown', 'true');
-                }, 1500);
-            }
-
-            closeBtn.addEventListener('click', () => {
-                popup.classList.add('hidden');
-                popup.classList.remove('flex');
-            });
-        }
-
-        // Handle all Formspree form submissions via AJAX to redirect to thank-you page
-        const forms = document.querySelectorAll('form[action*="formspree.io"]');
-        
-        forms.forEach(form => {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault(); // Stop default Formspree redirect behavior
-                
-                const formData = new FormData(form);
-                const btn = form.querySelector('button[type="submit"]');
-                const originalText = btn.innerText;
-                
-                btn.innerText = 'Submitting...';
-                btn.disabled = true;
-                btn.style.opacity = '0.7';
-                
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    
-                    if (response.ok) {
-                        btn.innerText = 'Request Received';
-                        btn.classList.add('bg-[#a68a69]');
-                        setTimeout(() => {
-                            // Successfully sent! Redirect to custom thank-you page
-                            window.location.href = "https://theintelligentbody.ae/thank-you";
-                        }, 1000);
-                    } else {
-                        alert('Oops! There was a problem submitting your form. Please try again.');
-                        btn.innerText = originalText;
-                        btn.disabled = false;
-                        btn.style.opacity = '1';
-                    }
-                } catch (error) {
-                    alert('Network error. Please check your connection and try again.');
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                }
-            });
-        });
-    });
-</script>
-
-<!-- ========================================== -->
-<!-- PROMOTIONAL POPUP MODAL (SPRING 2027 YTT)  -->
-<!-- ========================================== -->
+<!-- PROMOTIONAL POPUP MODAL (SPRING 2027 YTT) -->
 <div id="promo-popup" class="hidden fixed inset-0 z-[100] bg-[#48596b]/60 backdrop-blur-sm items-center justify-center p-4 sm:p-6">
     <div class="bg-[#efeae4] rounded-[2.5rem] shadow-2xl w-full max-w-lg relative overflow-hidden border border-[#a68a69]/30 animate-pop-in p-6 sm:p-10 text-center flex flex-col items-center">
         
         <!-- Close Button (X) -->
-        <button id="close-popup" class="absolute top-5 right-5 text-[#48596b]/60 hover:text-[#48596b] transition-colors p-2 rounded-full hover:bg-white/50" aria-label="Close Announcement">
+        <button id="close-popup" onclick="closePromoPopup()" class="absolute top-5 right-5 text-[#48596b]/60 hover:text-[#48596b] transition-colors p-2 rounded-full hover:bg-white/50" aria-label="Close Announcement">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
 
@@ -1300,10 +1201,10 @@
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-3 w-full max-w-xs">
-            <a href="#academy" onclick="document.getElementById('promo-popup').classList.add('hidden'); document.getElementById('promo-popup').classList.remove('flex');" class="bg-[#48596b] text-[#efeae4] py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#7a90a8] transition-all shadow-md hover:-translate-y-0.5 duration-300 w-full text-center">
+            <a href="#academy" onclick="closePromoPopup()" class="bg-[#48596b] text-[#efeae4] py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#7a90a8] transition-all shadow-md hover:-translate-y-0.5 duration-300 w-full text-center">
                 Explore & Reserve
             </a>
-            <button onclick="document.getElementById('promo-popup').classList.add('hidden'); document.getElementById('promo-popup').classList.remove('flex');" class="bg-transparent border border-[#a68a69]/40 text-[#a68a69] py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#a68a69]/10 transition-all duration-300 w-full text-center">
+            <button onclick="closePromoPopup()" class="bg-transparent border border-[#a68a69]/40 text-[#a68a69] py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#a68a69]/10 transition-all duration-300 w-full text-center">
                 Maybe Later
             </button>
         </div>
@@ -1356,5 +1257,103 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu) menu.classList.toggle('hidden');
+    }
+
+    // Terms & Conditions Popup Toggle Function
+    function toggleTermsModal(show) {
+        const modal = document.getElementById('terms-modal');
+        if (modal) {
+            if (show) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+    }
+
+    // Promo Popup Close Function
+    function closePromoPopup() {
+        const popup = document.getElementById('promo-popup');
+        if (popup) {
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+        }
+    }
+
+    // Popup Close & Init / AJAX Formspree Redirect Handler
+    document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('promo-popup');
+        
+        if (popup) {
+            // Check sessionStorage so the popup shows once per browser tab session
+            if (!sessionStorage.getItem('promoPopupShown')) {
+                setTimeout(() => {
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    sessionStorage.setItem('promoPopupShown', 'true');
+                }, 1500);
+            }
+        }
+
+        // Handle all Formspree form submissions via AJAX to redirect to thank-you page
+        const forms = document.querySelectorAll('form[action*="formspree.io"]');
+        
+        forms.forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(form);
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn ? btn.innerText : '';
+                
+                if (btn) {
+                    btn.innerText = 'Submitting...';
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+                }
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        if (btn) {
+                            btn.innerText = 'Request Received';
+                            btn.classList.add('bg-[#a68a69]');
+                        }
+                        setTimeout(() => {
+                            window.location.href = "https://theintelligentbody.ae/thank-you";
+                        }, 1000);
+                    } else {
+                        alert('Oops! There was a problem submitting your form. Please try again.');
+                        if (btn) {
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+                            btn.style.opacity = '1';
+                        }
+                    }
+                } catch (error) {
+                    alert('Network error. Please check your connection and try again.');
+                    if (btn) {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                    }
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
